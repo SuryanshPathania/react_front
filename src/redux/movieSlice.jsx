@@ -2,7 +2,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/movies";
+const API_URL = `${process.env.REACT_APP_API_BASE_URL}/movies`;
+
 
 // 🔹 Fetch Movies (For Logged-in User)
 export const fetchMovies = createAsyncThunk("movies/fetchMovies", async (_, { getState, rejectWithValue }) => {
